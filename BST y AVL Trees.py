@@ -261,7 +261,6 @@ class TreeMap:
             self.root = BSTNode.insert(self.root, key, value)
             start_node = BSTNode.find(self.root, key)
 
-        # Y aquí la clave:
         self.root = self.do_rotations(start_node)
 
     def __getitem__(self, key):
@@ -277,7 +276,6 @@ class TreeMap:
         deleted_node = BSTNode.find(self.root, key)
         self.root = BSTNode.delete(self.root, key)
         if deleted_node:
-            # Balanceamos desde el padre del nodo eliminado
             start_node = deleted_node.parent if deleted_node.parent else self.root
             self.root = self.do_rotations(start_node)
 
@@ -342,17 +340,13 @@ class TreeMap:
             elif balance < -1 and node.right.get_balance() > 0:
                 self.rotate_right(node.right)
                 node = self.rotate_left(node)
-
-            # Este paso es el importante:
-            # si después de rotar, el nodo no tiene padre, significa que es la nueva raíz
             if node.parent is None:
                 self.root = node
 
             node = node.parent
 
         return self.root
-
-        # Devolver la raíz
+        
         while last.parent:
             last = last.parent
         return last
