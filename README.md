@@ -1,6 +1,6 @@
 
 
-                                                                    ------------- Spanish version -------------
+###                                                                    ------------- Spanish version -------------
 
 ### 🌳 Descripción general del programa
 
@@ -190,7 +190,7 @@ Este proyecto no busca ser una librería lista para producción, sino un entrena
 
 
 
-                                                                    ------------- English version -------------
+###                                                                    ------------- English version -------------
 
 
 
